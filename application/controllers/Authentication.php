@@ -10,8 +10,6 @@ class Authentication extends CI_Controller {
 
     public function index()
     {
-        echo print_r($_SERVER);
-        die();
         if(isAuthenticated()) {
             redirect(base_url('dashboard'));
         }
