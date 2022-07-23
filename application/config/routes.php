@@ -14,13 +14,14 @@ $route['logout'] = 'Authentication/logout';
 $route['restrict-page'] = 'Errorpage/restrict_page';
 
 $route['data-kendaraan'] = 'Kendaraan/index';
-$route['data-kendaraan/get-data-kendaraan'] = 'Kendaraan/get_data_kendaraan';
 $route['data-kendaraan/create'] = 'Kendaraan/create';
 $route['data-kendaraan/(:any)/(:num)'] = 'Kendaraan/$1/$2';
 
 $route['data-progressif'] = 'Progressif/index';
 $route['data-progressif/create'] = 'Progressif/create';
 $route['data-progressif/(:any)/(:num)'] = 'Progressif/$1/$2';
+
+$route['pencetakan-surat'] = 'PencetakanSurat/index';
 
 $route['profil-perusahaan'] = 'ProfilPerusahaan';
 $route['profil-perusahaan/edit'] = 'ProfilPerusahaan/edit';

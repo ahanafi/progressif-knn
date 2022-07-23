@@ -259,17 +259,6 @@ class Kendaraan extends CI_Controller
             ],
         ];
     }
-
-    public function get_data_kendaraan()
-    {
-        if ($this->input->is_ajax_request()) {
-            header('Content-Type: application/json');
-            $jsonResult = $this->Kendaraan->getJsonResult();
-            echo $jsonResult;
-        } else {
-            redirect(base_url('error'));
-        }
-    }
 }
 
 /* End of file Kendaraan.php */

@@ -64,13 +64,14 @@ if($uri1 == "bank" || $uri1 == "rekening-koran") {
                 </ul>
             </li>
 
-            <li class="dropdown <?= $uri1 == 'supplier' ? 'active' : ''; ?>">
+            <li class="dropdown <?= $uri1 == 'pencetakan-surat' ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                    <i class="fa fa-print"></i> <span>Pencetakan Surat</span>
+                    <i class="fa fa-print"></i>
+                    <span>Pencetakan Surat</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="<?= $uri1 == 'supplier' && $uri2 == '' ? 'active' : ''; ?>">
-                        <a class="nav-link" href="<?= base_url('supplier'); ?>">Pencetakan Surat</a>
+                    <li class="<?= $uri1 == 'pencetakan-surat' ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('pencetakan-surat'); ?>">Pencetakan Surat</a>
                     </li>
                 </ul>
             </li>
@@ -82,14 +83,14 @@ if($uri1 == "bank" || $uri1 == "rekening-koran") {
                 </a>
             </li>
 
-			<li class="dropdown <?= ($uri1 == 'retur-supplier') ? 'active' : ''; ?>">
+			<li class="dropdown <?= ($uri1 == 'laporan') ? 'active' : ''; ?>">
 				<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
 					<i class="fas fa-file-alt"></i>
 					<span>Laporan</span>
 				</a>
 				<ul class="dropdown-menu">
-                    <li class="<?= ($uri1 == 'retur-supplier' ) ? 'active' : ''; ?>">
-                        <a class="nav-link" href="<?= base_url('retur-supplier'); ?>">Hasil Data WP</a>
+                    <li class="<?= ($uri1 == 'laporan' ) ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('laporan'); ?>">Hasil Data WP</a>
                     </li>
 				</ul>
 			</li>
