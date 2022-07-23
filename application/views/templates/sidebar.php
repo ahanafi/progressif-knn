@@ -47,242 +47,57 @@ if($uri1 == "bank" || $uri1 == "rekening-koran") {
 					<i class="fas fa-fire"></i><span>Dashboard</span>
 				</a>
 			</li>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= ($uri1 == 'pelanggan' || $uri1 == "sales") ? 'active' : ''; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-user-friends"></i>
-						<span>Pelanggan</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= ($uri1 == 'pelanggan' && $uri2 == '') ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('pelanggan'); ?>">Daftar Pelanggan</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'pelanggan' && $uri2 == 'piutang') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('pelanggan/piutang'); ?>">Piutang Pelanggan</a>
-						</li>
-						<li class="<?= ($uri1 == 'sales') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('sales'); ?>">Data Sales</a>
-						</li>
-					</ul>
-				</li>
-            <?php endif; ?>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= $uri1 == 'supplier' ? 'active' : ''; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-user-tag"></i> <span>Supplier</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= $uri1 == 'supplier' && $uri2 == '' ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('supplier'); ?>">Daftar Supplier</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= $uri1 == 'supplier' && $uri2 == 'hutang' ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('supplier/hutang'); ?>">Hutang ke Supplier</a>
-						</li>
-					</ul>
-				</li>
-            <?php endif; ?>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= $uri1 == 'nota-penjualan' ? 'active' : ''; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-sticky-note"></i>
-						<span>Nota Penjualan</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= ($uri1 == 'nota-penjualan' && ($uri2 == "create" || $uri2 == "index" || $uri2 == '') || $uri2 == "edit") ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('nota-penjualan'); ?>">Tambah Nota Penjualan</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'nota-penjualan' && $uri2 == 'daftar') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('nota-penjualan/daftar'); ?>">Daftar Nota Penjualan</a>
-						</li>
-                        <?php if (showOnlyTo("1|3")): ?>
-							<li class="<?= ($uri1 == 'nota-penjualan' && $uri2 == 'status') ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('nota-penjualan/status'); ?>">
-									Status Nota Penjualan
-								</a>
-							</li>
-                        <?php endif; ?>
-					</ul>
-				</li>
-            <?php endif; ?>
-			<li class="dropdown <?= $uri1 == 'nota-supplier' ? 'active' : ''; ?>">
-				<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-					<i class="fas fa-sticky-note"></i>
-					<span>Nota Supplier</span>
+            <li class="dropdown <?= $uri1 == 'data-kendaraan' ? 'active' : ''; ?>">
+				<a href="<?= base_url('data-kendaraan'); ?>" class="nav-link">
+					<i class="fas fa-car"></i><span>Data Kendaraan</span>
 				</a>
-				<ul class="dropdown-menu">
-                    <?php if (showOnlyTo("1|4")): ?>
-						<li class="<?= ($uri1 == 'nota-supplier' && ($uri2 == "" || $uri2 == "create" || $uri2 == "edit")) ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('nota-supplier'); ?>">Tambah Nota Supplier</a>
-						</li>
-                    <?php endif; ?>
-					<li class="<?= ($uri1 == 'nota-supplier' && ($uri2 == 'daftar')) ? 'active' : ''; ?>">
-						<a class="nav-link" href="<?= base_url('nota-supplier/daftar'); ?>">Daftar Nota Supplier</a>
-					</li>
-                    <?php if (showOnlyTo("1|2")): ?>
-						<li class="<?= ($uri1 == 'nota-supplier' && $uri2 == 'status') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('nota-supplier/status'); ?>">Status Nota Supplier</a>
-						</li>
-                    <?php endif; ?>
-				</ul>
 			</li>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= $uri1 == 'retur-penjualan' ? 'active' : ''; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-exchange-alt"></i>
-						<span>Retur Penjualan</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= ($uri1 == 'retur-penjualan' && ($uri2 == 'index' || $uri2 == '' || $uri2 == "create")) ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('retur-penjualan'); ?>">Tambah Retur Penjualan</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'retur-penjualan' && $uri2 == "daftar") ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('retur-penjualan/daftar'); ?>">Daftar Retur Penjualan</a>
-						</li>
-                        <?php if (showOnlyTo("1|3")): ?>
-							<li class="<?= ($uri1 == 'retur-penjualan' && $uri2 == 'status') ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('retur-penjualan/status'); ?>">Status Retur Penjualan</a>
-							</li>
-                        <?php endif; ?>
-					</ul>
-				</li>
-            <?php endif; ?>
+            <li class="dropdown <?= ($uri1 == 'data-progressif') ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                    <i class="fa fa-retweet"></i>
+                    <span>Update Data Progresif</span>
+                </a>
+                <ul class="dropdown-menu">
+                        <li class="<?= ($uri1 == 'data-progressif') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="<?= base_url('data-progressif'); ?>">Data Progresif</a>
+                        </li>
+                </ul>
+            </li>
+
+            <li class="dropdown <?= $uri1 == 'supplier' ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                    <i class="fa fa-print"></i> <span>Pencetakan Surat</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="<?= $uri1 == 'supplier' && $uri2 == '' ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('supplier'); ?>">Pencetakan Surat</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="<?= ($uri1 == 'nota-supplier' && ($uri2 == "" || $uri2 == "create" || $uri2 == "edit")) ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url('nota-supplier'); ?>">
+                    <i class="fa fa-file"></i>
+                    <span>Kelola Hasil Penentuan</span>
+                </a>
+            </li>
+
 			<li class="dropdown <?= ($uri1 == 'retur-supplier') ? 'active' : ''; ?>">
 				<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-					<i class="fas fa-exchange-alt"></i>
-					<span>Retur Supplier</span>
+					<i class="fas fa-file-alt"></i>
+					<span>Laporan</span>
 				</a>
 				<ul class="dropdown-menu">
-                    <?php if (showOnlyTo("1|4")): ?>
-						<li class="<?= ($uri1 == 'retur-supplier' && ($uri2 == "" || $uri2 == "create" || $uri2 == "update")) ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('retur-supplier'); ?>">Tambah Retur Supplier</a>
-						</li>
-                    <?php endif; ?>
-					<li class="<?= ($uri1 == 'retur-supplier' && $uri2 == 'daftar') ? 'active' : ''; ?>">
-						<a class="nav-link" href="<?= base_url('retur-supplier/daftar'); ?>">Daftar Retur Supplier</a>
-					</li>
-                    <?php if (showOnlyTo("1|2")): ?>
-						<li class="<?= ($uri1 == 'retur-supplier' && $uri2 == 'status') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('retur-supplier/status'); ?>">Status Retur Supplier</a>
-						</li>
-                    <?php endif; ?>
-				</ul>
-			</li>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= $uri1 == 'biaya' ? 'active' : ''; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-dollar-sign"></i>
-						<span>Biaya</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= ($uri1 == 'biaya' && ($uri2 == "create" || $uri2 == '')) ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('biaya'); ?>">Tambah Biaya</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'biaya' && $uri2 == "daftar") ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('biaya/daftar'); ?>">Daftar Biaya</a>
-						</li>
-                        <?php if (showOnlyTo("1|3")): ?>
-							<li class="<?= ($uri1 == 'biaya' && $uri2 == "status") ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('biaya/status'); ?>">Status Biaya</a>
-							</li>
-                        <?php endif; ?>
-					</ul>
-				</li>
-            <?php endif; ?>
-			<li class="dropdown <?= $bank_dan_rekening_koran; ?>">
-				<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-					<i class="fas fa-book"></i>
-					<span>Bank &amp; Rekening Koran</span>
-				</a>
-				<ul class="dropdown-menu">
-					<li class="<?= ($uri1 == 'bank' && $uri2 != 'status') ? 'active' : ''; ?>">
-						<a class="nav-link" href="<?= base_url('bank'); ?>">Daftar Bank</a>
-					</li>
-                    <li class="<?= ($uri1 == 'bank' && $uri2 == "status") ? 'active' : ''; ?>">
-                        <a class="nav-link" href="<?= base_url('bank/status'); ?>">Status Bank</a>
+                    <li class="<?= ($uri1 == 'retur-supplier' ) ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('retur-supplier'); ?>">Hasil Data WP</a>
                     </li>
-					<li class="<?= $uri1 == 'rekening-koran' ? 'active' : ''; ?>">
-						<a class="nav-link" href="<?= base_url('rekening-koran'); ?>">Rekening Koran</a>
-					</li>
 				</ul>
 			</li>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= $pembayaran_penjualan; ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-money-bill-wave"></i>
-						<span>Pembayaran Penjualan</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= $uri1 == 'keterangan' ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('keterangan'); ?>">Daftar Keterangan</a>
-							</li>
-							<li class="<?= $uri1 == 'jenis-bayar' ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('jenis-bayar'); ?>">Daftar Jenis Bayar</a>
-							</li>
-							<li class="<?= ($uri1 == 'pembayaran-piutang' && ($uri2 == '' || $uri2 == 'create' || $uri2 == 'edit' || $uri2 == 'detail')) ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('pembayaran-piutang'); ?>">Pembayaran Piutang</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'pembayaran-piutang' && $uri2 == 'daftar') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('pembayaran-piutang/daftar'); ?>">Daftar Pemb. Piutang</a>
-						</li>
-                        <?php if (showOnlyTo("1|3")): ?>
-							<li class="<?= ($uri1 == 'pembayaran-piutang' && $uri2 == 'status') ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('pembayaran-piutang/status'); ?>">Status Pemb. Piutang</a>
-							</li>
-                        <?php endif; ?>
-					</ul>
-				</li>
-            <?php endif; ?>
-            <?php if (!showOnlyTo("4")): ?>
-				<li class="dropdown <?= ($uri1 == 'pembayaran-hutang') ? 'active' : '' ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-money-bill-wave-alt"></i> <span>Pembayaran ke Supplier</span>
-					</a>
-					<ul class="dropdown-menu">
-                        <?php if (showOnlyTo("1|2")): ?>
-							<li class="<?= ($uri1 == 'pembayaran-hutang' && ($uri2 == '' || $uri2 == 'create')) ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('pembayaran-hutang'); ?>">Pembayaran Hutang</a>
-							</li>
-                        <?php endif; ?>
-						<li class="<?= ($uri1 == 'pembayaran-hutang' && $uri2 == 'daftar') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('pembayaran-hutang/daftar'); ?>">Daftar Pemb. Hutang</a>
-						</li>
-                        <?php if (showOnlyTo("1|3")): ?>
-							<li class="<?= ($uri1 == 'pembayaran-hutang' && $uri2 == 'status') ? 'active' : ''; ?>">
-								<a class="nav-link" href="<?= base_url('pembayaran-hutang/status'); ?>">Status Pemb. Hutang</a>
-							</li>
-                        <?php endif; ?>
-					</ul>
-				</li>
-            <?php endif; ?>
-			<li class="dropdown <?= ($uri1 == 'perhitungan') ? 'active' : '' ?>">
-					<a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-						<i class="fas fa-wallet"></i> <span>Perhitungan</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li class="<?= ($uri1 == 'perhitungan' && $uri2 == 'komisi') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('perhitungan/komisi'); ?>">Komisi</a>
-						</li>
-                        <li class="<?= ($uri1 == 'perhitungan' && $uri2 == 'cashback') ? 'active' : ''; ?>">
-							<a class="nav-link" href="<?= base_url('perhitungan/cashback'); ?>">Cashback</a>
-						</li>
-					</ul>
-				</li>
+
             <?php if (showOnlyTo("1")): ?>
 				<li class="dropdown <?= $uri1 == 'user' ? 'active' : ''; ?>">
 					<a href="<?= base_url('user'); ?>" class="nav-link">
-						<i class="fas fa-user-alt"></i><span>Pengguna</span>
+						<i class="fas fa-user-alt"></i><span>Manajemen User</span>
 					</a>
 				</li>
             <?php endif; ?>

@@ -100,28 +100,10 @@ if ($this->uri->segment(1) == "daftar-bayar") { ?>
         //Datatables
 		loadDataTable();
 
-        <?php if(($uri1 == "pelanggan" || $uri1 == "supplier"  || $uri1 == "sales") && $uri2 == ""): ?>
+        <?php if($uri1 == "data-kendaraan" && $uri2 == ""): ?>
         $("#mytable").dataTable({
             responsive: true,
-			autoWidth: true,
-            processing: true,
-            serverSide: true,
-            ajax: {"url": "<?php echo $uri1; ?>/get-<?php echo $uri1; ?>", "type": "POST"},
-            columns: [
-                {
-                    "data": "id_<?php echo $uri1; ?>",
-                    "orderable": false
-                },
-                {"data": "nama_<?php echo $uri1; ?>"},
-                {"data": "alamat"},
-                {"data": "kota"},
-                {"data": "kontak"},
-                {
-                    "data": "action",
-                    "orderable": false,
-                    "className": "text-center"
-                }
-            ],
+			autoWidth: true
         });
         <?php elseif($uri1 == "user" && $uri2 == ""): ?>
         $("#mytable").dataTable({
