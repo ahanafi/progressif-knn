@@ -22,6 +22,15 @@ class PencetakanSurat extends CI_Controller
             'title' => 'Pencetakan Surat',
         ];
 
+        if (isset($_POST['submit'])) {
+            $inputNopol = $this->input->post('nopol');
+            $kendaraan = $this->Kendaraan->getByNomorPolisi($inputNopol);
+            $data['nopol'] = $inputNopol;
+            $data['kendaraan'] = $kendaraan;
+            $data['nomor'] = 1;
+
+        }
+
         $this->main_lib->getTemplate("cetak-surat/form-pencarian", $data);
     }
 

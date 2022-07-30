@@ -7,7 +7,7 @@
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">
+            <h2 id="section-title" class="section-title">
                 Laporan Data Wajib Pajak
             </h2>
             <p class="section-lead">Data Wajib Pajak</p>
@@ -17,7 +17,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <div class="card-header-action">
-                                <a href="<?php echo base_url('laporan/cetak'); ?>"
+                                <a href="#" onclick="saveAsPDF(this)"
                                    class="btn btn-primary btn-icon icon-left float-right">
                                     <i class="fa fa-print"></i>
                                     Cetak
@@ -30,34 +30,20 @@
                                        id="mytable">
                                     <thead>
                                     <tr>
+                                        <th>NIK</th>
                                         <th>Nomor Polisi</th>
-                                        <th>Nama Pemilik <br> Alamat Pemilik</th>
-                                        <th>Merk <br> Type</th>
-                                        <th>Tahun <br> Warna</th>
-                                        <th>No. Rangka<br> No. Mesin</th>
-                                        <th>Jenis</th>
-                                        <th>Tanggal <br/> Daftar</th>
-                                        <th>Tanggal <br/> Bayar</th>
-                                        <th>Status</th>
+                                        <th>Nama Pemilik</th>
+                                        <th>Alamat Pemilik</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php if (count((array)$kendaraan) > 0): ?>
                                         <?php foreach ($kendaraan as $kd) : ?>
                                             <tr>
+                                                <td><?php echo $kd->nik_pemilik ?></td>
                                                 <td><?php echo strtoupper($kd->nomor_polisi) ?> </td>
-                                                <td><?php echo strtoupper($kd->nama_pemilik) ?>
-                                                    <br/> <?php echo strtoupper($kd->alamat_pemilik) ?> </td>
-                                                <td><?php echo strtoupper($kd->merk) ?>
-                                                    <br/> <?php echo strtoupper($kd->tipe) ?> </td>
-                                                <td><?php echo strtoupper($kd->tahun) ?>
-                                                    <br/> <?php echo strtoupper($kd->warna) ?> </td>
-                                                <td><?php echo strtoupper($kd->nomor_rangka) ?>
-                                                    <br/> <?php echo strtoupper($kd->nomor_mesin) ?> </td>
-                                                <td><?php echo strtoupper($kd->jenis) ?> </td>
-                                                <td><?php echo strtoupper($kd->tanggal_daftar) ?> </td>
-                                                <td><?php echo strtoupper($kd->tanggal_bayar) ?> </td>
-                                                <td><?php echo strtoupper($kd->status) ?> </td>
+                                                <td><?php echo strtoupper($kd->nama_pemilik) ?> </td>
+                                                <td><?php echo strtoupper($kd->alamat_pemilik) ?> </td>
                                             </tr>
                                         <?php endforeach ?>
                                     <?php else: ?>
@@ -75,3 +61,40 @@
         </div>
     </section>
 </div>
+
+<script>
+    const saveAsPDF = (el) => {
+        const mainSidebar = document.querySelector('#main-sidebar');
+        const sectionTitle =  document.querySelector('#section-title');
+
+        window.onbeforeprint = (evt) => {
+            el.style.display = 'none';
+            el.style.visibility = 'hidden';
+
+            mainSidebar.style.display = 'none';
+            mainSidebar.style.visibility = 'hidden';
+
+            sectionTitle.style.display = 'none';
+            sectionTitle.style.visibility = 'hidden';
+
+            button.style.display = 'none';
+            button.style.visibility = 'hidden';
+        }
+
+        window.onafterprint = (evt) => {
+            el.style.display = 'block';
+            el.style.visibility = 'visible';
+
+            mainSidebar.style.display = 'block';
+            mainSidebar.style.visibility = 'visible';
+
+            sectionTitle.style.display = 'block';
+            sectionTitle.style.visibility = 'visible';
+
+            button.style.display = 'block';
+            button.style.visibility = 'visible';
+        }
+
+        window.print();
+    }
+</script>

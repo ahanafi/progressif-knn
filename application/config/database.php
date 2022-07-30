@@ -6,7 +6,7 @@ $query_builder = TRUE;
 
 $hostname = 'localhost';
 $username = 'root';
-$password =  'password';
+$password =  '';
 $database = 'progressif_knn';
 
 $db['default'] = array(

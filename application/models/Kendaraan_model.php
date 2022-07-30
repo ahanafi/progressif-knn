@@ -16,6 +16,11 @@ class Kendaraan_model extends Main_model
         return $this->getWhereLike('*', ['nik_pemilik' => $nik]);
     }
 
+    public function getByNomorPolisi($nopol)
+    {
+        return $this->getBy('nomor_polisi', $nopol, true);
+    }
+
     public function getDataBaru()
     {
         $query = $this->customQuery("
