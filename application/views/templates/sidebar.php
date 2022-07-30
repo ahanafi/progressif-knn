@@ -76,11 +76,19 @@ if($uri1 == "bank" || $uri1 == "rekening-koran") {
                 </ul>
             </li>
 
-            <li class="<?= ($uri1 == 'nota-supplier' && ($uri2 == "" || $uri2 == "create" || $uri2 == "edit")) ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?= base_url('nota-supplier'); ?>">
+            <li class="dropdown <?= $uri1 == 'data-testing' ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                     <i class="fa fa-file"></i>
                     <span>Kelola Hasil Penentuan</span>
                 </a>
+                <ul class="dropdown-menu">
+                    <li class="<?= $uri1 == 'data-testing' && ($uri2 === 'index' || $uri2 === 'update') ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('data-testing'); ?>">Data Testing</a>
+                    </li>
+                    <li class="<?= $uri1 == 'data-testing' && $uri2 === 'data-baru' ? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?= base_url('data-testing/data-baru'); ?>">Data Baru</a>
+                    </li>
+                </ul>
             </li>
 
 			<li class="dropdown <?= ($uri1 == 'laporan') ? 'active' : ''; ?>">

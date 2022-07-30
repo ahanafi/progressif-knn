@@ -15,6 +15,14 @@ class Kendaraan_model extends Main_model
     {
         return $this->getWhereLike('*', ['nik_pemilik' => $nik]);
     }
+
+    public function getDataBaru()
+    {
+        $query = $this->customQuery("
+            SELECT * FROM $this->table WHERE `status` IS NULL
+        ");
+        return $query->result();
+    }
 }
 
 /* End of file Kendaraan_model.php */

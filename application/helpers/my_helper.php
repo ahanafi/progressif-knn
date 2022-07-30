@@ -251,18 +251,11 @@ function redirectBack()
     exit;
 }
 
-function getPdfLink($fileName, $dataType)
-{
-    $currentHostName = $_SERVER['HTTP_HOST'];
-    $localHostName = [
-        '[::1]', 'localhost', '127.0.0.1'
-    ];
+function getNik($string) {
+    return substr($string, -3, 3);
+}
 
-    $pathFile = base_url('uploads/' . $dataType . '/' . $fileName);
-    $googleDocsEmbedLink = "http://docs.google.com/gview?embedded=true&url=";
-
-    return in_array($currentHostName, $localHostName)
-        ? $pathFile
-        : $googleDocsEmbedLink . $pathFile;
-
+function getNopol($nopol) {
+    $explode = explode(" ", $nopol);
+    return substr($explode[1], 2, 2);
 }

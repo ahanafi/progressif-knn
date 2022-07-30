@@ -179,4 +179,9 @@ class Main_model extends CI_Model
         return $query->result();
     }
 
+    public function customQuery($query)
+    {
+        return $this->db->query($query);
+    }
+
 }

@@ -38,7 +38,7 @@ $uri1 = $this->uri->segment(1);
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/datatables/Responsive-2.2.1/css/responsive.bootstrap4.min.css">
 
-        <link rel="icon shortcut" href="<?php echo base_url('assets/img/logo.svg') ?>">
+        <link rel="icon shortcut" href="<?php echo base_url('assets/img/logo-prov-jabar.png') ?>">
 
         <!-- CSS Libraries -->
         <?php if ($uri1 == "rekening-koran"): ?>

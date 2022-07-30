@@ -37,8 +37,9 @@ $grandTotalPembayaranPenjualan = 0;
 						<div class="card-header">
 							<h4 class="text-uppercase text-primary" style="width: auto !important;">Dashboard</h4>
 						</div>
-						<div class="card-body d-flex justify-content-center align-items-center text-center" style="height: 380px;">
-							<h3>Selamat datang di Aplikasi <br> Pengelolaan Pengecekan Kendaraan Progresif</h3>
+						<div class="card-body d-flex flex-column justify-content-center align-items-center text-center" style="height: 380px;">
+                            <img src="<?php echo base_url('assets/img/logo-prov-jabar.png') ?>" alt="Logo Prov Jabar" style="width: 200px;">
+							<h3 class="mt-5">Selamat datang di Aplikasi <br> Pengelolaan Pengecekan Kendaraan Progresif</h3>
 						</div>
 					</div>
 				</div>
