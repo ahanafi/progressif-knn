@@ -26,11 +26,68 @@
                                         <?php echo form_error('nik'); ?>
                                     </div>
                                     <div class="col-sm-2">
-                                        <button name="submit" class="btn btn-block btn-primary" type="submit">
+                                        <button name="cari" value="cari" class="btn btn-block btn-primary" type="submit">
                                             Cari
                                         </button>
                                     </div>
                                 </div>
+                                <br>
+
+                                <?php if(isset($kendaraan) && $kendaraan !== null && $is_found): ?>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-md table-bordered dt-responsive nowrap w-100"
+                                               id="mytable">
+                                            <thead>
+                                            <tr>
+                                                <th>Nomor Polisi</th>
+                                                <th>Nama Pemilik <br> Alamat Pemilik</th>
+                                                <th>Merk <br> Type</th>
+                                                <th>Tahun <br> Warna</th>
+                                                <th>No. Rangka<br> No. Mesin</th>
+                                                <th>Jenis</th>
+                                                <th>Tanggal <br/> Daftar</th>
+                                                <th>Tanggal <br/> Bayar</th>
+                                                <th>Status</th>
+                                                <?php if (showOnlyTo("1|2")): ?>
+                                                    <th class="text-center">Aksi</th>
+                                                <?php endif; ?>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($kendaraan as $kd) : ?>
+                                                    <tr>
+                                                        <td><?php echo strtoupper($kd->nomor_polisi) ?> </td>
+                                                        <td><?php echo strtoupper($kd->nama_pemilik) ?>
+                                                            <br/> <?php echo strtoupper($kd->alamat_pemilik) ?> </td>
+                                                        <td><?php echo strtoupper($kd->merk) ?>
+                                                            <br/> <?php echo strtoupper($kd->tipe) ?> </td>
+                                                        <td><?php echo strtoupper($kd->tahun) ?>
+                                                            <br/> <?php echo strtoupper($kd->warna) ?> </td>
+                                                        <td><?php echo strtoupper($kd->nomor_rangka) ?>
+                                                            <br/> <?php echo strtoupper($kd->nomor_mesin) ?> </td>
+                                                        <td><?php echo strtoupper($kd->jenis) ?> </td>
+                                                        <td><?php echo strtoupper($kd->tanggal_daftar) ?> </td>
+                                                        <td><?php echo strtoupper($kd->tanggal_bayar) ?> </td>
+                                                        <td><?php echo strtoupper($kd->status) ?> </td>
+                                                        <td class="text-center">
+                                                            <a href="<?php echo base_url('data-kendaraan/edit/' . $kd->id_kendaraan); ?>"
+                                                               class="btn btn-light"><i class="fa fa-edit"></i></a>
+                                                            <a href="#" class="btn btn-light"
+                                                               onclick="showConfirmDelete('kendaraan', '<?php echo $kd->id_kendaraan ?>')"><i
+                                                                        class="fa fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php else: ?>
+                                    <?php if(isset($_POST['cari'])): ?>
+                                        <div class="d-flex justify-content-center align-items-center py-3">
+                                            <h4>Data tidak ditemukan. Silahkan lakukan pencarian kembali.</h4>
+                                        </div>
+                                    <?php endif ?>
+                                <?php endif ?>
                             </div>
                         </div>
                     </div>

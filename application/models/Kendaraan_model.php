@@ -10,6 +10,11 @@ class Kendaraan_model extends Main_model
         $this->datatables->select('*')->from($this->table);
         return $this->datatables->generate();
     }
+
+    public function getByNik($nik)
+    {
+        return $this->getWhereLike('*', ['nik_pemilik' => $nik]);
+    }
 }
 
 /* End of file Kendaraan_model.php */

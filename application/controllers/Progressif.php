@@ -19,6 +19,20 @@ class Progressif extends CI_Controller
             'title' => 'Data Progressif',
             'no' => 1
         ];
+
+        $isFound = false;
+        $kendaraan = null;
+
+        if(isset($_POST['cari'])) {
+            $nik = $this->main_lib->getPost('nik');
+
+            $kendaraan = $this->Kendaraan->getByNik($nik);
+            $isFound = $kendaraan !== null && count($kendaraan) > 0;
+        }
+
+        $data['kendaraan'] = $kendaraan;
+        $data['is_found'] = $isFound;
+
         $this->main_lib->getTemplate('progressif/form-pencarian', $data);
     }
 

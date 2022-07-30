@@ -1,4 +1,16 @@
 <?php
+
+function dd($data) {
+    if (is_array($data)) {
+        print_r($data);
+        die();
+    }
+
+    if (is_string($data)) {
+        echo $data;
+        die();
+    }
+}
 function isAuthenticated()
 {
     $ci =& get_instance();

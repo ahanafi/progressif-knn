@@ -31,7 +31,11 @@
                                     <thead>
                                     <tr>
                                         <th>Nomor Polisi</th>
-                                        <th>Nama Pemilik <br> Alamat Pemilik</th>
+                                        <th>
+                                            NIK Pemilik <br>
+                                            Nama Pemilik <br>
+                                            Alamat Pemilik
+                                        </th>
                                         <th>Merk <br> Type</th>
                                         <th>Tahun <br> Warna</th>
                                         <th>No. Rangka<br> No. Mesin</th>
@@ -49,8 +53,11 @@
                                         <?php foreach ($kendaraan as $kd) : ?>
                                             <tr>
                                                 <td><?php echo strtoupper($kd->nomor_polisi) ?> </td>
-                                                <td><?php echo strtoupper($kd->nama_pemilik) ?>
-                                                    <br/> <?php echo strtoupper($kd->alamat_pemilik) ?> </td>
+                                                <td>
+                                                    <?php echo strtoupper($kd->nik_pemilik) ?>
+                                                    <br/> <?php echo strtoupper($kd->nama_pemilik) ?>
+                                                    <br/> <?php echo strtoupper($kd->alamat_pemilik) ?>
+                                                </td>
                                                 <td><?php echo strtoupper($kd->merk) ?>
                                                     <br/> <?php echo strtoupper($kd->tipe) ?> </td>
                                                 <td><?php echo strtoupper($kd->tahun) ?>
