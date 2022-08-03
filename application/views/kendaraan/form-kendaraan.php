@@ -26,6 +26,14 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="inputnama_rekening3" class="col-sm-3 col-form-label">NIK pemilik</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" required name="nik_pemilik" value="<?php echo $nik_pemilik ?>" class="form-control text-uppercase" placeholder="Nama Pemilik" autocomplete="off">
+                                        <?php echo form_error('nik_pemilik'); ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="inputnama_rekening3" class="col-sm-3 col-form-label">Nama pemilik</label>
                                     <div class="col-sm-9">
                                         <input type="text" required name="nama_pemilik" value="<?php echo $nama_pemilik ?>" class="form-control text-uppercase" placeholder="Nama Pemilik" autocomplete="off">
@@ -121,9 +129,13 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Status</label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Status Progresif</label>
                                     <div class="col-sm-9">
-                                        <input type="text" required class="form-control text-uppercase" value="<?php echo $status ?>" name="status" id="inputPassword3" placeholder="Status" autocomplete="off">
+                                        <select name="status" required id="" class="form-control">
+                                            <option value="" disabled selected>-- Pilih Status --</option>
+                                            <option value="1">YA</option>
+                                            <option value="0">TIDAK</option>
+                                        </select>
                                         <?php echo form_error('status'); ?>
                                     </div>
                                 </div>

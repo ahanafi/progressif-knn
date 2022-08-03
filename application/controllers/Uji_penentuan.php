@@ -62,7 +62,7 @@ class Uji_penentuan extends CI_Controller
                 'nopol' => $nopolTest,
                 'euclidean_distance' => $euclideanDistance,
                 'ed_persen' => $edPersen,
-                'status' => $data->status_progresif !== '' && $data->status_progresif !== null ? 1 : 0
+                'status' => $data->status_progresif == '1' ? 1 : 0
             ];
         }
 

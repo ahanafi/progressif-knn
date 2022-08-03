@@ -45,7 +45,7 @@ class Data_testing extends CI_Controller
                         'id_kendaraan' => $idKendaraan,
                         'nik' => getNik($kd->nik_pemilik),
                         'nopol' => getNopol($kd->nomor_polisi),
-                        'status_progresif' => $kd->status !== '' && $kd->status !== null ? 1 : 0
+                        'status_progresif' => $kd->status == 1 ? 1 : 0
                     ];
                 }
 

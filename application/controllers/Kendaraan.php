@@ -32,6 +32,7 @@ class Kendaraan extends CI_Controller
 
             // Data kendaraan
             'nomor_polisi' => set_value('nomor_polisi'),
+            'nik_pemilik' => set_value('nik_pemilik'),
             'nama_pemilik' => set_value('nama_pemilik'),
             'alamat_pemilik' => set_value('alamat_pemilik'),
             'merk' => set_value('merk'),
@@ -90,6 +91,7 @@ class Kendaraan extends CI_Controller
             'action' => 'update',
 
             'nomor_polisi' => $kendaraan->nomor_polisi,
+            'nik_pemilik' => $kendaraan->nik_pemilik,
             'nama_pemilik' => $kendaraan->nama_pemilik,
             'alamat_pemilik' => $kendaraan->alamat_pemilik,
             'merk' => $kendaraan->merk,
@@ -139,6 +141,7 @@ class Kendaraan extends CI_Controller
     {
         return [
             'nomor_polisi' => strtoupper($this->main_lib->getPost('nomor_polisi')),
+            'nik_pemilik' => strtoupper($this->main_lib->getPost('nik_pemilik')),
             'nama_pemilik' => strtoupper($this->main_lib->getPost('nama_pemilik')),
             'alamat_pemilik' => strtoupper($this->main_lib->getPost('alamat_pemilik')),
             'merk' => strtoupper($this->main_lib->getPost('merk')),
@@ -195,6 +198,11 @@ class Kendaraan extends CI_Controller
             [
                 'field' => 'nomor_polisi',
                 'label' => 'Nomor Polisi',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'nik_pemilik',
+                'label' => 'NIK pemilik',
                 'rules' => 'required'
             ],
             [

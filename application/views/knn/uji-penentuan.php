@@ -30,7 +30,7 @@
                                             <tr>
                                                 <td><?php echo strtoupper($kd->nik) ?></td>
                                                 <td><?php echo strtoupper($kd->nopol) ?> </td>
-                                                <td><?php echo $kd->status_progresif === 1 ? 'Ya' : 'Tidak' ?> </td>
+                                                <td><?php echo $kd->status_progresif == '1' ? 'Ya' : 'Tidak' ?> </td>
                                             </tr>
                                         <?php endforeach ?>
                                     <?php else: ?>
@@ -122,7 +122,7 @@
                                             <td><?php echo $result['nik']; ?></td>
                                             <td><?php echo $result['nopol']; ?></td>
                                             <td><?php echo $result['euclidean_distance']; ?></td>
-                                            <td><?php echo $result['status'] === 1 ? 'Ya' : 'T'; ?></td>
+                                            <td><?php echo $result['status'] == '1' ? 'Ya' : 'Tidak'; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
@@ -152,7 +152,7 @@
                                                     <td><?php echo $result['nik']; ?></td>
                                                     <td><?php echo $result['nopol']; ?></td>
                                                     <td><?php echo $result['euclidean_distance']; ?></td>
-                                                    <td><?php echo $result['status'] === 1 ? 'Ya' : 'T'; ?></td>
+                                                    <td><?php echo $result['status'] == '1' ? 'Ya' : 'Tidak'; ?></td>
                                                 </tr>
                                             <?php
                                             endif;

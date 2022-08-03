@@ -13,7 +13,7 @@ class Data_testing_model extends Main_model
     public function getDataTesting()
     {
         $query = $this->customQuery("
-            SELECT * FROM $this->table
+            SELECT *, kendaraan.status AS status_kendaraan FROM $this->table
             RIGHT JOIN kendaraan USING (id_kendaraan)
         ");
         return $query->result();

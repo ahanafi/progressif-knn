@@ -46,7 +46,7 @@
                                             <tr>
                                                 <td><?php echo strtoupper($kd->nik) ?></td>
                                                 <td><?php echo strtoupper($kd->nopol) ?> </td>
-                                                <td><?php echo $kd->status_progresif === 1 ? 'Ya' : 'Tidak' ?> </td>
+                                                <td><?php echo $kd->status_progresif == 1 ? 'Ya' : 'Tidak' ?> </td>
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-light"
                                                        onclick="showConfirmDelete('data_testing', '<?php echo $kd->id_data_testing ?>')"><i
@@ -106,7 +106,7 @@
                                         <br/> <?php echo strtoupper($kd->nama_pemilik) ?>
                                         <br/> <?php echo strtoupper($kd->alamat_pemilik) ?>
                                     </td>
-                                    <td><?php echo strtoupper($kd->status) ?> </td>
+                                    <td><?php echo $kd->status_kendaraan == '1' ? 'Ya' : 'Tidak' ?> </td>
                                     <td class="text-center">
                                         <input
                                            type="checkbox"
