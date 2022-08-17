@@ -45,6 +45,8 @@ class Kendaraan extends CI_Controller
             'tanggal_daftar' => set_value('tanggal_daftar'),
             'tanggal_bayar' => set_value('tanggal_bayar'),
             'status' => set_value('status'),
+            'cc' => set_value('cc'),
+            'persentase_progressif' => set_value('persentase_progressif'),
         ];
 
         if (isset($_POST['insert'])) {
@@ -104,6 +106,9 @@ class Kendaraan extends CI_Controller
             'tanggal_daftar' => $kendaraan->tanggal_daftar,
             'tanggal_bayar' => $kendaraan->tanggal_bayar,
             'status' => $kendaraan->status,
+            'cc' => $kendaraan->cc,
+            'persentase_progressif' => $kendaraan->persentase_progressif,
+
         ];
 
         if (isset($_POST['update'])) {
@@ -154,6 +159,8 @@ class Kendaraan extends CI_Controller
             'tanggal_daftar' => $this->main_lib->getPost('tanggal_daftar'),
             'tanggal_bayar' => $this->main_lib->getPost('tanggal_bayar'),
             'status' => $this->main_lib->getPost('status'),
+            'cc' => $this->main_lib->getPost('cc'),
+            'persentase_progressif' => $this->main_lib->getPost('persentase_progressif'),
         ];
     }
 

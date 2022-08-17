@@ -48,9 +48,8 @@
                                                 <th>Tanggal <br/> Daftar</th>
                                                 <th>Tanggal <br/> Bayar</th>
                                                 <th>Status</th>
-                                                <?php if (showOnlyTo("1|2")): ?>
-                                                    <th class="text-center">Aksi</th>
-                                                <?php endif; ?>
+                                                <th>CC</th>
+                                                <th>Persentasi <br/> Progressif</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -69,13 +68,8 @@
                                                         <td><?php echo strtoupper($kd->tanggal_daftar) ?> </td>
                                                         <td><?php echo strtoupper($kd->tanggal_bayar) ?> </td>
                                                         <td><?php echo strtoupper($kd->status) ?> </td>
-                                                        <td class="text-center">
-                                                            <a href="<?php echo base_url('data-kendaraan/edit/' . $kd->id_kendaraan); ?>"
-                                                               class="btn btn-light"><i class="fa fa-edit"></i></a>
-                                                            <a href="#" class="btn btn-light"
-                                                               onclick="showConfirmDelete('kendaraan', '<?php echo $kd->id_kendaraan ?>')"><i
-                                                                        class="fa fa-trash-alt"></i></a>
-                                                        </td>
+                                                        <td><?php echo strtoupper($kd->cc) ?> </td>
+                                                        <td><?php echo strtoupper($kd->persentase_progressif) ?> </td>
                                                     </tr>
                                                 <?php endforeach ?>
                                             </tbody>

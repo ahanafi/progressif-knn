@@ -140,6 +140,22 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="inputnama_rekening3" class="col-sm-3 col-form-label">CC Kendaraan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="cc" value="<?php echo $cc ?>" class="form-control text-uppercase" placeholder="CC Kendaraan" autocomplete="off">
+                                        <?php echo form_error('cc'); ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputnama_rekening3" class="col-sm-3 col-form-label">Persentase Progresif</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="persentase_progressif" value="<?php echo $persentase_progressif ?>" class="form-control text-uppercase" placeholder="Persentase Progressif" autocomplete="off">
+                                        <?php echo form_error('persentase_progressif'); ?>
+                                    </div>
+                                </div>
+
                                 <div class="text-right">
                                     <button name="<?php echo $action ?>" class="btn btn-primary mr-1" type="submit">Simpan Data
                                     </button>

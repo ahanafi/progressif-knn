@@ -54,6 +54,8 @@
                                             <th>Merk <br> Type</th>
                                             <th>Tanggal <br/> Daftar</th>
                                             <th>Tanggal <br/> Bayar</th>
+                                            <th>CC</th>
+                                            <th>Persentase <br/> Progressif</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -71,6 +73,8 @@
                                                         <br/> <?php echo strtoupper($kd->tipe) ?> </td>
                                                     <td><?php echo strtoupper($kd->tanggal_daftar) ?> </td>
                                                     <td><?php echo strtoupper($kd->tanggal_bayar) ?> </td>
+                                                    <td><?php echo strtoupper($kd->cc) ?> </td>
+                                                    <td><?php echo strtoupper($kd->persentase_progressif) ?> </td>
                                                 </tr>
                                             <?php endforeach ?>
                                         <?php else: ?>
